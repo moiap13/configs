@@ -1,0 +1,95 @@
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)"    # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[➜](bold red)"
+
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = false
+
+
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+
+# Git status : https://starship.rs/config/#git-status
+# Option	Default	Description
+# format	'([\[$all_status$ahead_behind\]]($style) )'	The default format for git_status
+# conflicted	"="	This branch has merge conflicts.
+# ahead	"⇡"
+# behind	"⇣"
+# diverged	"⇕"
+# up_to_date	""
+# untracked	"?"
+# stashed	"$"
+# modified	"!"
+# staged	"+"
+# renamed	"»"
+# deleted	"✘"
+# style	"bold red"	The style for the module.
+# disabled	false	Disables the git_status module.
+
+[[battery.display]]
+threshold = 100
+style = "bold green"
+[[battery.display]]
+threshold = 20
+style = "bold yellow"
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+
+[directory]
+truncation_length = 8
+truncation_symbol = "…/"
+
+
+[line_break]
+disabled = false
+
+[git_status]
+conflicted = "⛔️"
+#ahead = "🏎💨"
+#behind = "😰"
+#diverged = "😵"
+up_to_date = "[ ✓](bold green)"
+untracked = "🤷‍"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+
+[python]
+python_binary="python"
+
+[localip]
+ssh_only = false
+format = '@[$localipv4](bold red) '
+disabled = false
+
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = ' '
+style = 'bold dimmed green'
+
+[time]
+disabled = false
+format = '🕙[\[ $time \]]($style) '
+time_format = '%T'
+utc_time_offset = '+1'
+time_range = '10:00:00-14:00:00'
+
+[cmd_duration]
+min_time = 500
+format = 'underwent [$duration](bold yellow)'
