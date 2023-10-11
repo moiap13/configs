@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -79,6 +79,8 @@ plugins=(
   python
   zsh-autosuggestions
   zsh-syntax-highlighting
+  fast-syntax-highlighting
+  zsh-autocomplete
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -113,3 +115,22 @@ ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red') # To have commands st
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/antonio/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/antonio/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/antonio/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="$PATH:/Users/antonio/miniconda3/bin"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# add vscode to path
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+eval $(thefuck --alias)
