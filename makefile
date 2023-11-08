@@ -2,7 +2,7 @@ CURDIR=$(shell pwd)
 ZSH_CUSTOM_PLUGINS=$(HOME)/.oh-my-zsh/custom/plugins
 
 # Replace existing files with the one from this directory
-configs: zsh starship_config
+configs: zshrc starship_config
 osx: install_omz download_plugins install_starship configs
 ubuntu: install_zsh_ubuntu install_omz install_starship resolve_broken_characters download_plugins configs
 
@@ -20,12 +20,10 @@ install_zsh_ubuntu:
 	chsh -s $(which zsh)
 
 install_omz:
-	rm install.sh
 	cd $(HOME)
-	sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+	curl -sS https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
 
 install_starship:
-	rm install.sh
 	curl -sS https://starship.rs/install.sh | sh
 
 resolve_broken_characters:
@@ -38,6 +36,19 @@ zshrc:
 starship_config:
 	rm -f ~/.config/starship.toml
 	cp -r $(CURDIR)/starship/starship.toml $(HOME)/.config/
+
+iterm2:
+	cd $CURDIR/iterm2
+	defaults read com.googlecode.iterm2
+
+homebrew:
+	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+thefuck:
+	brew install thefuck
+
+asahi_linux:
+	curl https://fedora-asahi-remix.org/install | sh
 
 ech:
 	@echo $(CURDIR)
