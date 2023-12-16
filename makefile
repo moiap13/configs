@@ -4,7 +4,7 @@ ZSH_CUSTOM_PLUGINS=$(HOME)/.oh-my-zsh/custom/plugins
 # Replace existing files with the one from this directory
 configs: zshrc starship_config
 osx: install_omz download_plugins install_starship configs
-ubuntu: install_zsh_ubuntu install_omz install_starship resolve_broken_characters download_plugins configs
+ubuntu: install_zsh_ubuntu install_curl_ubuntu install_omz install_starship resolve_broken_characters download_plugins configs
 
 
 download_plugins:
@@ -16,8 +16,11 @@ download_plugins:
 install_zsh_ubuntu:
 	sudo apt update -y
 	sudo apt install zsh -y
-	@echo ZSH VERSION: $(zsh --version)
-	chsh -s $(which zsh)
+	@echo ZSH VERSION: $$(zsh --version)
+	chsh -s $$(which zsh)
+
+install_curl_ubuntu:
+	sudo apt install curl -y
 
 install_omz:
 	cd $(HOME)
