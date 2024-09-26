@@ -1,5 +1,7 @@
 CURDIR=$(shell pwd)
 ZSH_CUSTOM_PLUGINS=$(HOME)/.oh-my-zsh/custom/plugins
+UNAME = $(shell uname)
+UNAMEM = $(shell uname -m)
 
 # Replace existing files with the one from this directory
 configs: zshrc starship_config
@@ -49,6 +51,11 @@ thefuck:
 
 asahi_linux:
 	curl https://fedora-asahi-remix.org/install | sh
+
+mamba:
+	curl -SL# https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(UNAME)-$(UNAMEM).sh -o Miniforge3.sh
+	sh Miniforge3.sh
+	rm Miniforge3.sh
 
 ech:
 	@echo $(CURDIR)

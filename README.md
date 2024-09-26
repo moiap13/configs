@@ -6,6 +6,7 @@
 - [`MonitorControl`](https://github.com/MonitorControl/MonitorControl/releases) - MonitorControl let you control brightness and volume for external monitors
 - [`HiddenBar`](https://apps.apple.com/us/app/hidden-bar/id1452453066?mt=12) - HiddenBar let us hide status in the menu bar
 - [`HotKey`](https://apps.apple.com/us/app/hotkey-app/id975890633?mt=12) - HotKey is a keyboard shortcut manager
+- [`SpotifyWidget`](https://github.com/fabiusBile/Spotify4BigSur) - Spotify widget for controlling Spotify from the widget menu
 
 ## Optional ones
 - [`Shottr`](https://shottr.cc) - Shottr is a screenshot tool for macOS
