@@ -7,6 +7,7 @@ UNAMEM = $(shell uname -m)
 configs: zshrc starship_config
 osx: install_omz download_plugins install_starship configs
 ubuntu: install_zsh_ubuntu install_curl_ubuntu install_omz install_starship resolve_broken_characters download_plugins configs
+kali: install_zsh_ubuntu install_curl_ubuntu install_omz install_starship download_plugins configs
 
 
 download_plugins:
